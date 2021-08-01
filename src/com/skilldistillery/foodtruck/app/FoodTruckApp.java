@@ -47,49 +47,76 @@ public class FoodTruckApp {
 			}
 		}
 //		public void mainMenu() {
-		String choice = "stop";
-		while (!choice.equalsIgnoreCase("quit")) {
-			System.out.println("Which menu option would you like to select? ");
+	String option = "stop";
+		
+		while (!option.equalsIgnoreCase("quit")) {
+		System.out.println("Which menu option would you like to select? ");
 
-			// Display Menu
-			System.out.println("************************************************");
-			System.out.println("*                                              *");
-			System.out.println("*              -App Main Menu-                 *");
-			System.out.println("*                                              *");
-			System.out.println("*   Please choose from the following options:  *");
-			System.out.println("*                                              *");
-			System.out.println("*    1: List all existing food trucks.         *");
-			System.out.println("*    2: See the average rating of food trucks. *");
-			System.out.println("*    3: Display the highest-rated food truck.  *");
-			System.out.println("*    4: Quit the program.                      *");
-			System.out.println("************************************************");
+		// Display Menu
+		System.out.println("************************************************");
+		System.out.println("*                                              *");
+		System.out.println("*              -App Main Menu-                 *");
+		System.out.println("*                                              *");
+		System.out.println("*   Please choose from the following options:  *");
+		System.out.println("*                                              *");
+		System.out.println("*    1: List all existing food trucks.         *");
+		System.out.println("*    2: See the average rating of food trucks. *");
+		System.out.println("*    3: Display the highest-rated food truck.  *");
+		System.out.println("*    4: Quit the program.                      *");
+		System.out.println("************************************************");
+//changed from option as an int to string
+		 option = keyboard.nextLine();
+//			keyboard.nextLine();
+		if (option.equals("1")) {
+			app.PrintTrucks(trucks);
+		} 
+		else if (option.equals("2")) {
+			System.out.println("The average rating for your food trucks is: " + app.AverageRating(trucks));
+		} 
+		else if (option.equals("3")) {
+			FoodTruck highestTruck = app.HighestRating(trucks);
+			System.out.println("The highest rated food truck is: " + highestTruck);
 
-			int option = keyboard.nextInt();
-			keyboard.nextLine();
-//	}
-			switch (option) {
-
-			case 1:
-				app.PrintTrucks(trucks);
-				break;
-
-			case 2:
-				System.out.println("The averating rating for your food trucks is: " + app.AverageRating(trucks));
-				break;
-
-			case 3:
-				System.out.println("The food truck with the highest rating is: " + app.HighestRating(trucks).toString());
-				break;
-
-			case 4:
-				app.SayGoodbye();
-				choice = "quit";
-				break;
-			}
-			if (choice == "quit") {
-				break;
-			}
+		} 
+			else if (option.equals("4")) {
+			app.SayGoodbye();
+			option = "quit";
+			break;
 		}
+	}
+
+//		if (option.equals("quit")) {
+//			break;
+//	}
+//}
+//	break;
+//}
+//}
+//			switch (option) {
+
+//			case 1:
+//				app.PrintTrucks(trucks);
+//				break;
+//
+//			case 2:
+//				System.out.println("The average rating for your food trucks is: " + app.AverageRating(trucks));
+//				break;
+//
+//			case 3:
+//			app.HighestRating(trucks);
+////			String highestRatedTruck = app.HighestRating(trucks).toString();
+////			System.out.println("The food truck with the highest rating is: " + highestRatedTruck);
+//				break;
+//
+//			case 4:
+//				app.SayGoodbye();
+//				choice = "quit";
+//				break;
+//			}
+//			if (choice == "quit") {
+//				break;
+//			}
+//		}
 	}
 
 	public void PrintTrucks(FoodTruck trucks[]) {
@@ -97,32 +124,38 @@ public class FoodTruckApp {
 			if (trucks[i] != null) {
 				System.out.println(trucks[i].toString());
 			} else if (trucks[i] == null) {
-				System.out.println("There are no trucks to display.");
 				break;
 			}
 		}
 	}
 
-	public FoodTruck AverageRating(FoodTruck trucks[]) {
+	public double AverageRating(FoodTruck trucks[]) {
 		int i = 0;
 		int rate = 0;
-		while (trucks[i].getRating() > rate) {
-			rate = trucks[i].getRating();
+		int totalTrucks = 0;
+		while (i < 5 && trucks[i] !=null) {
+			totalTrucks++;
+			rate += trucks[i].getRating();
+
 			i++;
 		}
-		return trucks[i];
+		double averageTruckRating = (double) (rate / totalTrucks);
+
+		return averageTruckRating;
 	}
 
 	public FoodTruck HighestRating(FoodTruck trucks[]) {
+		FoodTruck high = trucks[0];
 		int i = 0;
-		int rate = 0;
-		while (trucks[i] != null && i < 5) {
-			if (trucks[i].getRating() > rate) {
-				rate = trucks[i].getRating();
-				i++;
+		while (i < 5) {
+			if (trucks[i] != null) {
+				if (trucks[i].getRating() > high.getRating()) {
+					high = trucks[i];
+				}
 			}
+			i++;
 		}
-		return trucks[i];
+		return high;
 	}
 
 	public void SayGoodbye() {
