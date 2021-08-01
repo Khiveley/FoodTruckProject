@@ -1,8 +1,8 @@
-#Food Truck Application
+# Food Truck Application
 
-###Description
+### Description
 
-###Technologies Used
+### Technologies Used
 
 
-###Lessons Learned
+### Lessons Learned

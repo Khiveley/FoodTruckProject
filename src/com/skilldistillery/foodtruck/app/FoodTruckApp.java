@@ -85,38 +85,6 @@ public class FoodTruckApp {
 		}
 	}
 
-//		if (option.equals("quit")) {
-//			break;
-//	}
-//}
-//	break;
-//}
-//}
-//			switch (option) {
-
-//			case 1:
-//				app.PrintTrucks(trucks);
-//				break;
-//
-//			case 2:
-//				System.out.println("The average rating for your food trucks is: " + app.AverageRating(trucks));
-//				break;
-//
-//			case 3:
-//			app.HighestRating(trucks);
-////			String highestRatedTruck = app.HighestRating(trucks).toString();
-////			System.out.println("The food truck with the highest rating is: " + highestRatedTruck);
-//				break;
-//
-//			case 4:
-//				app.SayGoodbye();
-//				choice = "quit";
-//				break;
-//			}
-//			if (choice == "quit") {
-//				break;
-//			}
-//		}
 	}
 
 	public void PrintTrucks(FoodTruck trucks[]) {
