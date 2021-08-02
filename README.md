@@ -28,11 +28,14 @@ After choosing a menu item, the user sees the menu again and can choose another 
 * Arrays
 * Encapsulation
 * Getters and Setters
+* Debugging
 
 ### Lessons Learned
 
 This project was challenging!  In the last project, I went straight to the task of coding.  For this one, I worked on creating the design first to try and solidify the "what" behind each story before I tried to determine how to best tackle the code.  With object oriented programming being a fresh concept, it was also particularly challenging to determine the syntax of where I need to use dot notation or when I should use FoodTruck, truck, trucks, etc.  
 
 This project has helped to more solidly concrete the concepts learned this past week; however, I need to have more exposure to the materials and concepts to grow my confidence in being able to do the work without assistance or while not able to have someone else for demonstration.  This week has been pivotal...I have really been stretched and am no longer comfortable in being quiet if I don't understand.  I know from the study sessions that I participated in that I'm not alone in having questions or feeling behind/overwhelmed.  I'm going to speak up because if I don't I'm only hurting myself.
+
+A decent amount of my time was spent chasing bugs in menu options 2 and 3. I had started with a switch statement to handle the user selecting whichever choice they wanted inside of a while loop. I checked brackets to make sure they were aligned to where they should be in code.  I rewrote the handling of the options later as a a bunch of if - else if statements and that helped some to be able to isolate the error to my methods for handling average rating and highest rating.  My errors as array index out of bounds errors were not found on compilation and had to do with how I went about trying to return the values back from the indices once they were created.  
 
 Thank you for viewing my project.  I hope that you find it as fun as I found challenging!
