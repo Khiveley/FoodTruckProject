@@ -6,28 +6,31 @@ In this project, I had to create a program that allowed a user to input and rate
 
 I had to include a FoodTruck class with fields for a unique numeric id, a name and a numeric rating.  A separate class with a main method starts the program and stores up to five FoodTruck objects.  The main method in this class is the only static method. Additionally, the following user stories requirements needed to be met:
 
-User Story #1
+**User Story #1**
 The user is prompted to input the name, food type, and rating for up to five food trucks. For each set of input, a FoodTruck object is created, its fields set to the user's input, and it is added to the array. The truck id is not input by the user, but instead assigned automatically in the FoodTruck constructor from a static field that is incremented as each truck is created.
 
-User Story #2
+**User Story #2**
 If the user inputs quit for the food truck name, input ends immediately and the program continues.
 
-User Story #3
+**User Story #3**
 After input is complete, the user sees a menu from which they can choose to:
 
 List all existing food trucks.
 See the average rating of food trucks.
 Display the highest-rated food truck.
 Quit the program.
-User Story #4
+**User Story #4**
 After choosing a menu item, the user sees the menu again and can choose another item until the choose to quit.
 
 ### How to Use
 
+Feel free to review the source code I've provided in the project or copy to Eclipse or another IDE of your choice.
+
 ### Technologies Used
 * Arrays
-* Encapsulation
-* Getters and Setters
+* Creating objects classes with constructors and fields.
+* Creating methods in classes like setters and getters to access private data elsewhere in our program.
+* Use of loops with break
 * Debugging
 
 ### Lessons Learned
